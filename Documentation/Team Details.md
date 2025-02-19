@@ -1,7 +1,7 @@
 
-# Members
+# Team Details
 
-Member roles, responsibilities and assignments.
+Team member roles, responsibilities and assignments.
 
 ## Evan Caudy (Security Lead)
 ### Responsibilities
