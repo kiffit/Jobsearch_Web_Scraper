@@ -1,4 +1,4 @@
-#Standards and Practices for Documentation
+# Standards and Practices for Printed Documentation
 
 1. The top right corner of all printed documents must include the printed date in Month Day, Year format.
 
