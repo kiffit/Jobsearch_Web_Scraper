@@ -7,7 +7,7 @@
 3. All text should be printed in Arial Font
 4. Page title should be bold and underlined
 5. Text should be left aligned
-6. Text should also be double spaced
+6. Text should be double spaced
 
 ## Digital Documentation
 
