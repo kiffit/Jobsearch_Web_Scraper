@@ -22,7 +22,7 @@ Key objectives include:
 - **Data Management & Exporting**
   - Structure extracted job data into a formatted, readable output in the Python terminal.
   - Export job listings automatically as a CSV file.
-  - Ensure data is not stored locally beyond user export requests, keeping it lightweight and within scope.
+  - Data is automatically exported to a CSV file keeping it lightweight and within scope.
 
 - **Testing, Deployment, and Documentation**
   - Conduct thorough security testing to prevent data leaks and unauthorized access.
