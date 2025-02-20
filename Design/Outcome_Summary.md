@@ -10,13 +10,13 @@ The final system will be developed according to the requirements gathered during
 ### Core Feature
 - **Automated Job Scraping** – Extracts job listings from multiple job websites and company career pages.
 - **Search & Filtering Options** – Users can input job search criteria (title, location, keywords).
-- **Data Organization & Export** – Scraped job listings will be structured and saved in CSV or JSON formats for easy access and analysis.
+- **Data Organization & Export** – Scraped job listings will be structured and saved in a CSV format for easy access and analysis.
   
 ### User Interface (UI) & User Experience (UX)
 - The program will run entirely through the Python terminal.
 - Users will input search parameters via command-line prompts.
 - The scraper will retrieve and process job postings, displaying them in a formatted output.
-- Users will be able to export results to a CSV or JSON file for future reference.
+- Job listings will automatically be saved to a csv file format for ease of access. 
 - The interface will provide clear instructions and structured output, ensuring ease of use.
 
 ## Security & Compliance
@@ -58,4 +58,4 @@ The scraper fetches real-time job listings based on user inputs.
 Results appear directly in the terminal in a structured, readable format.
 
 ### Step 5: Export Data
-Users can save job listings as a CSV or JSON file by selecting an option in the terminal.
+Job listings are automatically saved to a csv file format. 
