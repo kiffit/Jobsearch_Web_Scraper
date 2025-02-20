@@ -7,10 +7,10 @@
 - [Statement of Work](https://github.com/kiffit/waterfall-project/blob/main/Design/Statement_of_Work.md)
 - [Outcome Summary](https://github.com/kiffit/waterfall-project/blob/main/Design/Outcome_Summary.md)
 - [Statement of Work](https://github.com/kiffit/waterfall-project/blob/main/Design/Statement_of_Work.md)
-## Standards and Practices
-- [Coding Standards](https://github.com/kiffit/waterfall-project/blob/main/standards-and-practices/coding_standards.md)
-- [Documentation Standards](https://github.com/kiffit/waterfall-project/blob/main/standards-and-practices/documentation_standards.md)
-- [Security Practices](https://github.com/kiffit/waterfall-project/blob/main/standards-and-practices/security_practices.md)
+  ### Standards and Practices
+  - [Coding Standards](https://github.com/kiffit/waterfall-project/blob/main/standards-and-practices/coding_standards.md)
+  - [Documentation Standards](https://github.com/kiffit/waterfall-project/blob/main/standards-and-practices/documentation_standards.md)
+  - [Security Practices](https://github.com/kiffit/waterfall-project/blob/main/standards-and-practices/security_practices.md)
 
 ## Requirements
 
