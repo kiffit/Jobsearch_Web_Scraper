@@ -27,7 +27,6 @@ The final system will be developed according to the requirements gathered during
 
 ## Security & Compliance
 ### Security Features
-- **User Authentication & Role Management** – Users may need to log in to save preferences and manage their job searches.
 - **Firewall Protection & CAPTCHA Handling** – Prevents blocking from job websites while maintaining ethical scraping practices.
 - **Data Privacy & Encryption** – Ensures that stored job data is protected from unauthorized access.
 
