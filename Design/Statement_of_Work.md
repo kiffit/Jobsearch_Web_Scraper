@@ -18,12 +18,10 @@ Key objectives include:
   - Ensure compliance with ethical scraping practices and prevent unauthorized access.
 
 - **Data Management & Exporting**
-  - Structure the extracted job data into a searchable and filterable format.
-  - Enable users to download job listings in CSV or JSON formats for further analysis.
-  - Implement a database or temporary storage to track scraped jobs and prevent redundancy.
+  - Structure and clean the extracted job data into a searchable and filterable format.
+  - Job listings will automatically be transported to either a CSV or JSON format for ease of access.
 
 - **Testing, Deployment, and Documentation**
-  - Conduct thorough security testing to prevent data leaks and unauthorized access.
   - Optimize the system for performance, reliability, and scalability.
   - Finalize and document all system functionalities, user guides, and API references (if applicable).
   - Prepare a final project presentation, summarizing objectives, challenges, and solutions.
@@ -51,7 +49,7 @@ The project will be divided into distinct phases, each with clear deliverables a
 - Perform security audits and fix vulnerabilities.
   
 ### Phase 5: Documentation & Final Presentation (Completion by March 7th)
-- Finalize all technical and user documentation.
+- Finalize all technical documentation
 - Prepare a detailed project presentation.
 - Ensure project deliverables meet quality standards.
 
@@ -69,8 +67,8 @@ The project will be divided into distinct phases, each with clear deliverables a
   - The system will store and handle data securely, ensuring compliance with ethical guidelines.
 
 - **Data Export & Management Capabilities**
-  - Users will be able to download job data in CSV or JSON format for future use.
+  - Extracted job data will automatically be tranfered to a CSV or JSON format for future use.
  
 - **Comprehensive Documentation & Presentation**
-  - Detailed technical and user documentation will be provided for system maintenance and operation.
+  - Detailed technical documentation will be provided for system maintenance and operation.
   - A final project presentation will summarize project objectives, challenges, and outcomes.
