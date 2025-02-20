@@ -9,30 +9,24 @@ The final system will be developed according to the requirements gathered during
 
 ### Core Feature
 - **Automated Job Scraping** – Extracts job listings from multiple job websites and company career pages.
-- **Search & Filtering Options** – Users can customize search criteria such as job title, location, salary, company, and keywords.
-- **Data Organization & Export** – Scraped job listings will be structured and stored in an easily accessible format (CSV, JSON, or database).
+- **Search & Filtering Options** – Users can input job search criteria (title, location, keywords).
+- **Data Organization & Export** – Scraped job listings will be structured and saved in CSV or JSON formats for easy access and analysis.
   
 ### User Interface (UI) & User Experience (UX)
-- A modern, clean dashboard where users can input their job search parameters and view results.
-- Search Bar & Filters for refining job listings (e.g., sort by date, salary, location, job type).
-- Data Table with Job Listings, displaying job title, company, location, salary (if available), posting date, and application link.
-- Export Button to download job data in CSV or JSON format.
-
-### Backend System & Architecture
-- A scalable backend that efficiently processes job scraping requests and manages data storage.
-- API integrations may be implemented to retrieve data from popular job boards.
-- Database management to store job listings and prevent duplicates.
-- Job scheduling functionality for automated scraping at set intervals.
-
+- The program will run entirely through the Python terminal.
+- Users will input search parameters via command-line prompts.
+- The scraper will retrieve and process job postings, displaying them in a formatted output.
+- Users will be able to export results to a CSV or JSON file for future reference.
+- The interface will provide clear instructions and structured output, ensuring ease of use.
 
 ## Security & Compliance
 ### Security Features
 - **Firewall Protection & CAPTCHA Handling** – Prevents blocking from job websites while maintaining ethical scraping practices.
-- **Data Privacy & Encryption** – Ensures that stored job data is protected from unauthorized access.
+- **Data Privacy & Responsible Data Handling** – Ensures that stored job data is protected from unauthorized access.
 
 ### Compliance Measures
 - **Respecting Website Terms of Service** – The scraper will follow best practices to avoid violating website policies.
-- **Secure Data Storage** – Prevents unauthorized data leaks or breaches.
+- **Responsible Data Handling** – The system will only store job listing data and will not collect personal or sensitive user information.
   
 ## Stability & Reliability
 ### Feature Freeze (March 5th)
@@ -43,23 +37,25 @@ The final system will be developed according to the requirements gathered during
 - Error handling and logging mechanisms to manage failed scraping attempts.
 
 ### Testing & Quality Assurance
-- **Usability Testing** – Ensures the dashboard is user-friendly and intuitive.
-- **Security Testing** – Identifies vulnerabilities before deployment.
-- **Performance Testing** – Verifies that the system can handle multiple users and large datasets efficiently.
+- **Functionality Testing** – Ensures scraping results match expected outputs.
+- **Performance Testing** – Optimizes for efficient execution within terminal constraints.
+- **Usability Testing** – Ensures a smooth user experience through clear prompts and outputs.
 
 ## How Users Will Interact with the System
-### Step 1: Access the Dashboard
-Users visit the web-based dashboard.
+### Step 1: Run the Python Script
+Users execute the script in the Python terminal.
 
-### Step 2: Customize Job Search Parameters
-Users enter job search criteria (e.g., job title, location, company, salary range, keywords) using the search bar and filters.
+### Step 2: Input Search Parameters
+The program prompts users to enter job search criteria such as:
+- Job title (e.g., “Software Engineer”)
+- Location (optional)
+- Keywords (e.g., “Remote,” “Entry-level”)
 
 ### Step 3: Initiate Job Scraping
-Users click “Start Scraping” to fetch job listings in real time.
+The scraper fetches real-time job listings based on user inputs.
 
-### Step 4: View & Manage Job Listings
-Results are displayed in a structured data table with job title, company, location, salary, and a link to the application page.
-Users can sort, filter, and search within the job listings.
+### Step 4: Display & Manage Job Listings
+Results appear directly in the terminal in a structured, readable format.
 
-### Step 5: Export & Save Data
-Users can download the job listings in CSV or JSON format for offline use.
+### Step 5: Export Data
+Users can save job listings as a CSV or JSON file by selecting an option in the terminal.
