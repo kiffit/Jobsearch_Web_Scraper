@@ -5,23 +5,27 @@ The goal of this project is to design and develop a functional system that meets
 
 Key objectives include:
 - **User Interaction & Experience**
-  - Develop an interactive web-based dashboard that allows users to search, filter, and manage job listings effortlessly.
-  - Enable users to input job search criteria (e.g., title, location, company) and receive relevant results.
-  - Provide a clean and intuitive interface for easy navigation and job data management.
+  - Develop a Python terminal-based interface where users can input job search criteria and retrieve relevant job postings.
+  - Allow users to enter search parameters (job title, location, keywords) using command-line prompts.
+  - Display job search results in a structured format for easy reading and analysis.
+  - Provide an option to export job listings as CSV or JSON files for future reference.
 
 - **Data Extraction & Automation**
-  - Implement a scraper capable of extracting job listings from multiple websites efficiently.
-  - Ensure that the system can handle large amounts of job postings while preventing duplicate entries.
+  - Implement a web scraper that efficiently extracts job listings from multiple websites.
+  - Ensure the system can handle large amounts of job postings while preventing duplicate entries.
+  - Optimize the scraper for performance and minimal bot detection interference.
  
 - **Security & Compliance**
   - Protect the system from bot detection and blocking mechanisms by job websites.
   - Ensure compliance with ethical scraping practices and prevent unauthorized access.
 
 - **Data Management & Exporting**
-  - Structure and clean the extracted job data into a searchable and filterable format.
-  - Job listings will automatically be transported to either a CSV or JSON format for ease of access.
+  - Structure extracted job data into a formatted, readable output in the Python terminal.
+  - Allow users to export job listings as CSV or JSON files.
+  - Ensure data is not stored locally beyond user export requests, keeping it lightweight and within scope.
 
 - **Testing, Deployment, and Documentation**
+  - Conduct thorough security testing to prevent data leaks and unauthorized access.
   - Optimize the system for performance, reliability, and scalability.
   - Finalize and document all system functionalities, user guides, and API references (if applicable).
   - Prepare a final project presentation, summarizing objectives, challenges, and solutions.
@@ -49,14 +53,14 @@ The project will be divided into distinct phases, each with clear deliverables a
 - Perform security audits and fix vulnerabilities.
   
 ### Phase 5: Documentation & Final Presentation (Completion by March 7th)
-- Finalize all technical documentation
+- Finalize all technical and user documentation.
 - Prepare a detailed project presentation.
 - Ensure project deliverables meet quality standards.
 
 ## Expectations upon Completion
-- **A Fully Functional Job Scraper Dashboard**
-  - Users can search, filter, and retrieve job listings from multiple sources in real time.
-  - A modern, user-friendly interface will allow easy interaction with the scraped job data.
+- **A Fully Functional Python Terminal-Based Job Scraper**
+  - Users can search and retrieve job listings from multiple sources in real time.
+  - A clean, structured command-line interface will allow easy interaction with job data.
     
 - **Automated & Efficient Job Scraping System**
   - The scraper will automatically extract relevant job postings based on user-defined criteria.
@@ -67,8 +71,8 @@ The project will be divided into distinct phases, each with clear deliverables a
   - The system will store and handle data securely, ensuring compliance with ethical guidelines.
 
 - **Data Export & Management Capabilities**
-  - Extracted job data will automatically be tranfered to a CSV or JSON format for future use.
+  - Users will be able to download job data in CSV or JSON format for future use.
  
 - **Comprehensive Documentation & Presentation**
-  - Detailed technical documentation will be provided for system maintenance and operation.
+  - Detailed technical and user documentation will be provided for system maintenance and operation.
   - A final project presentation will summarize project objectives, challenges, and outcomes.
