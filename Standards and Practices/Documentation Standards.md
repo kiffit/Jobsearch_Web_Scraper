@@ -11,3 +11,4 @@
   - Statement of Work.md
   - Problem Statement.md
   - KanBan Board.png
+2. All directories should follow the above convention, with the exception of code directories.
