@@ -5,6 +5,8 @@
 1. The top right corner of all printed documents must include the printed date in Month Day, Year format.
 2. The person in charge of creating the document should be named in the bottom left corner of printed page with "Edited By: fname lname".
 3. All text should be printed in Arial Font
+4. Page title should be bold and underlined
+5. Text should be left aligned
 
 ## Digital Documentation
 
