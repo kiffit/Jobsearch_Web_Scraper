@@ -8,7 +8,7 @@ Key objectives include:
   - Develop a Python terminal-based interface where users can input job search criteria and retrieve relevant job postings.
   - Allow users to enter search parameters (job title, location, keywords) using command-line prompts.
   - Display job search results in a structured format for easy reading and analysis.
-  - Provide an option to export job listings as CSV or JSON files for future reference.
+  - Job listings will automatically be saved to a csv file format for ease of access.
 
 - **Data Extraction & Automation**
   - Implement a web scraper that efficiently extracts job listings from multiple websites.
@@ -21,7 +21,7 @@ Key objectives include:
 
 - **Data Management & Exporting**
   - Structure extracted job data into a formatted, readable output in the Python terminal.
-  - Allow users to export job listings as CSV or JSON files.
+  - Export job listings automatically as a CSV file.
   - Ensure data is not stored locally beyond user export requests, keeping it lightweight and within scope.
 
 - **Testing, Deployment, and Documentation**
@@ -71,7 +71,7 @@ The project will be divided into distinct phases, each with clear deliverables a
   - The system will store and handle data securely, ensuring compliance with ethical guidelines.
 
 - **Data Export & Management Capabilities**
-  - Users will be able to download job data in CSV or JSON format for future use.
+  - Job listings are automally saved to a csv file format.
  
 - **Comprehensive Documentation & Presentation**
   - Detailed technical and user documentation will be provided for system maintenance and operation.
