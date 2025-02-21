@@ -1,4 +1,4 @@
-# Security Practices
+# Standards and Practices for Security
 
 - Make sure there is input validation on all EI’s (External Inputs) to ensure clean data.
   - API Inputs
