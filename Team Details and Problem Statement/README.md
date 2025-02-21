@@ -1,7 +1,6 @@
 ## Team Details and Problem Statement: README.md
 
-This README.md contains a member page which lists each member, their role and duties, and a problem statement page which outlines a rough idea of our project.
+#### Current Files in the Directory
 
-MEMBERS PAGE: [Members Page.md](https://github.com/kiffit/waterfall-project/blob/main/Team%20Details%20and%20Problem%20Statement/Members%20Page.md)
-
-PROBLEM STATEMENT: [Problem Statement.md](https://github.com/kiffit/waterfall-project/blob/main/Team%20Details%20and%20Problem%20Statement/Problem%20Statement.md) 
+- Members Page: [Members Page](https://github.com/kiffit/waterfall-project/blob/main/Team%20Details%20and%20Problem%20Statement/Members%20Page.md)
+- Problem Statement: [Problem Statement](https://github.com/kiffit/waterfall-project/blob/main/Team%20Details%20and%20Problem%20Statement/Problem%20Statement.md) 
