@@ -1,4 +1,4 @@
-# Security Practices
+# Security Statement
 
 - Make sure there is input validation on all EI’s (External Inputs) to ensure clean data.
   - API Inputs
