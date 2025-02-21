@@ -1,4 +1,4 @@
-# Coding Standards and Practices
+# Standards and Practices for Coding
 1. Main methods must be at the top of your code file.
 2. Global variables are unacceptable.
 3. Programs should be broken into functions if possible.
