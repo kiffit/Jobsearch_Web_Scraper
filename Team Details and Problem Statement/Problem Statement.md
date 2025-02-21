@@ -23,4 +23,4 @@ The steps of finding job listings from various websites and segregating them are
 - **Job Seekers**: These are those who are seeking jobs from various platforms and want some automated process.
 - **Recruiters & HR Professionals**: Need to track job postings and analyze hiring trends.
 - **Developers & Researchers**: Users who want job market data analysis and trends.
-- 
+  
