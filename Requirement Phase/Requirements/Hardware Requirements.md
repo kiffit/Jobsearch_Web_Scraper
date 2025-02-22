@@ -1,9 +1,6 @@
-# Hardware Requirment
+# Hardware Requirements
 
-- **Processing Power**: For running the scraper efficiently
-- **Storage**: For temporary data processing & CSV export
-- **Network & Connectivity**: For accessing job search website
-- **Scalability**: In case of large-scale scraping need
+A compututing device with the following attributes.
 
 ### Minimum Requirment                                  
 | Component          | Specification                         |
@@ -13,3 +10,7 @@
 | Network            | 100 Mbps or Higher                    |
 | Operating System   | Windows 10/11, macOS, or Linux        |
 
+- **Processing Power**: For running the scraper efficiently
+- **Storage**: For temporary data processing & CSV export
+- **Network & Connectivity**: For accessing job search website
+- **Scalability**: In case of large-scale scraping need
