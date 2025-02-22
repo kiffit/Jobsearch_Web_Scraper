@@ -1,8 +1,8 @@
 # Hardware Requirements
 
-A compututing device with the following attributes.
+A computing device with the following attributes.
 
-### Minimum Requirment                                  
+### Minimum Requirements                                  
 | Component          | Specification                         |
 |--------------------|---------------------------------------|
 | Processor(CPU)     | AMD RYZEN 3 / Intel Core i3 or Higher |
@@ -12,5 +12,5 @@ A compututing device with the following attributes.
 
 - **Processing Power**: For running the scraper efficiently
 - **Storage**: For temporary data processing & CSV export
-- **Network & Connectivity**: For accessing job search website
-- **Scalability**: In case of large-scale scraping need
+- **Network & Connectivity**: For accessing job search websites
+- **Scalability**: In case of large-scale scraping needs
