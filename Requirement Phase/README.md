@@ -1,1 +1,12 @@
 # Requirement Phase: README.md
+
+### Problem Frames
+- Software Engineering Problem Frames: [SEPF](https://github.com/kiffit/Jobsearch_Web_Scraper/blob/main/Planning%20Phase/Executive%20Summary.md)
+- Security Software Engineering Problem Frames: [SSEPF]()
+### Requirements
+- Hardware Requirements: [Coding Standards](https://github.com/kiffit/Jobsearch_Web_Scraper/blob/main/Planning%20Phase/Standards%20and%20Practices/Coding%20Standards.md)
+- Security Requirements: [Documentation Standards](https://github.com/kiffit/Jobsearch_Web_Scraper/blob/main/Planning%20Phase/Standards%20and%20Practices/Documentation%20Standards.md)
+- Software Requirements: [Security Standards](https://github.com/kiffit/Jobsearch_Web_Scraper/blob/main/Planning%20Phase/Standards%20and%20Practices/Security%20Standards.md)
+- User Requirements: [User Requirements]()
+
+
