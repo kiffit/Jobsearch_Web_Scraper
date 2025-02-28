@@ -6,4 +6,4 @@
 - UML Diagram: [UML Diagram](https://github.com/kiffit/Jobsearch_Web_Scraper/blob/main/Design%20Phase/Diagrams/UML%20Diagram.png)
 ### Design Documents
 - Executive Design Document: [Executive Design Document](https://github.com/kiffit/Jobsearch_Web_Scraper/blob/main/Design%20Phase/Executive%20Design%20Document.md)
-- Security Design Document: [Security Design Document]
+- Security Design Document: [Security Design Document](https://github.com/kiffit/Jobsearch_Web_Scraper/blob/main/Design%20Phase/Security%20Design%20Document.md)
