@@ -59,3 +59,4 @@ Team member roles, responsibilities and assignments.
 - Assigning tasks, reviewing completion and moving forward through the Waterfall phases toward project completion.
 - Working with the team to encourage working in parallel when applicable to meet deadlines and meet product expectations.
 
+### **[Click here to go back to Home](https://github.com/kiffit/waterfall-project)**
