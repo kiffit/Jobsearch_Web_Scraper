@@ -7,3 +7,5 @@
 - Check websites TOS to check if information being scraped is permitted and/or find a robot.txt file (websites often have one to explicitly state what can and can not be scraped).
   - Double Check Rules
   - Read Thouroughly
+
+### **[Click here to go back to Home](https://github.com/kiffit/waterfall-project)**
