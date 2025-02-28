@@ -41,3 +41,5 @@
 ## 5. Ethical and Legal Compliance Requirements
 - Users must be restricted from scraping unauthorized websites
 - Users should be informed about the ethical use of the tool
+
+### **[Click here to go back to Home](https://github.com/kiffit/waterfall-project)**
