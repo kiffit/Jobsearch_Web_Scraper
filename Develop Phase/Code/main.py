@@ -1,5 +1,7 @@
+import time
 from bs4 import BeautifulSoup
 from seleniumbase import Driver
+
 
 def main():
     user_keywords = "ERR"
@@ -16,6 +18,7 @@ def main():
     jobs_list = []
     soup = "ERR"
     data_frame = []
+    index  = -1
 
     # Grab user search parameters
     user_keywords, user_location = get_user_input()
@@ -24,8 +27,13 @@ def main():
     base_url_google = "https://www.google.com/search"
     search_url_google = create_user_search_parameters(user_keywords, user_location, base_url_google, query)
     soup = get_html_code(search_url_google)
-    find_job_data(soup, jobs_list)
-
+    jobs_list = jobs_list_create_helper(soup, 'tNxQIb PUpOsf')
+    find_job_data(soup, jobs_list, 'tNxQIb PUpOsf', 0)
+    find_job_data(soup, jobs_list, 'wHYlTd MKCbgd a3jPc', 1)
+    find_job_data(soup, jobs_list, 'wHYlTd FqK3wc MKCbgd', 2)
+    find_job_data(soup, jobs_list, 'Yf9oye', 3)
+    find_job_data(soup, jobs_list, 'nNzjpf-cS4Vcb-PvZLI-Ueh9jd-LgbsSe-Jyewjb-tlSJBe', 4)
+    print(jobs_list)
 
 def get_user_input():
     print("Please enter any keyword that you would like with the spaces being replaced by +")
@@ -53,21 +61,28 @@ def create_user_search_parameters(user_keywords, user_location, base_url_google,
 def get_html_code(search_url):
     driver = Driver(browser="Chrome", headless=False)
     driver.get(search_url)
-    soup = BeautifulSoup(driver.page_source, 'html.parser')
-    return soup
+    bottom_height = driver.execute_script("return document.body.scrollHeight")
+    while True:
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        time.sleep(.5)
+        new_height = driver.execute_script("return document.body.scrollHeight")
+        if new_height == bottom_height:
+            soup = BeautifulSoup(driver.page_source, 'html.parser')
+            return soup
+        bottom_height = new_height
 
-
-def find_job_data(soup, jobs_list):
-    job_cards = soup.find_all('div', class_='tNxQIb PUpOsf')
-    counter = 0
-
+def jobs_list_create_helper(soup, class_name):
+    job_cards = soup.find_all('div', class_=f'{class_name}')
     rows, cols = (len(job_cards), 5)
     jobs_list = [[0 for i in range(cols)] for j in range(rows)]
+    return jobs_list
+
+def find_job_data(soup, jobs_list, class_name, index):
+    job_cards = soup.find_all('div', class_=f'{class_name}')
+    counter = 0
     for equipment_type in job_cards:
-        jobs_list[counter][0] = equipment_type.text
+        jobs_list[counter][index] = equipment_type.text
         counter += 1
-    print(len(job_cards))
-    print(jobs_list)
     return jobs_list
 
 
