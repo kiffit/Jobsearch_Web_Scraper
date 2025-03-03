@@ -1,7 +1,7 @@
 # Develop Phase: README.md
 
 ### Code
-- Main Program: [Main](https://github.com/kiffit/Jobsearch_Web_Scraper/blob/main/Develop%20Phase/Code/main.py)
+- Main Program: [main](https://github.com/kiffit/Jobsearch_Web_Scraper/blob/main/Develop%20Phase/Code/main.py)
 
 ### Progress Tracking
 - **02/27/2025**: [02/27/2025](https://github.com/kiffit/Jobsearch_Web_Scraper/blob/main/Develop%20Phase/Code/Progress%20Tracking/Job%20Scraper%2002.27.2025.pdf)
