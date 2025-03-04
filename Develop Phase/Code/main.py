@@ -20,19 +20,18 @@ def main():
     data_frame = []
 
     # Grab user search parameters
-    user_keywords, user_location = general_check(lambda: get_user_input(), "Unable to grab search parameters...")
+    user_keywords, user_location = general_check(get_user_input(), "Unable to grab search parameters...")
 
     # Google
     base_url_google = "https://www.google.com/search"
-    search_url_google = general_check(lambda: create_user_search_parameters(user_keywords, user_location, base_url_google, query), "Unable to generate search...")
-    soup = general_check(lambda: get_html_code(search_url_google), "Unable to load soup...")
+    search_url_google = general_check(create_user_search_parameters(user_keywords, user_location, base_url_google, query), "Unable to generate search...")
+    soup = general_check(get_html_code(search_url_google), "Unable to load soup...")
 
     jobs_list = jobs_list_create_helper(soup, 'tNxQIb PUpOsf')
-    general_check(lambda: find_job_data(soup, jobs_list, 'tNxQIb PUpOsf', 0), "Unable to initialize job search...")
-    general_check(lambda: find_job_data(soup, jobs_list, 'wHYlTd MKCbgd a3jPc', 1), "Unable to initialize job search...")
-    general_check(lambda: find_job_data(soup, jobs_list, 'wHYlTd FqK3wc MKCbgd', 2), "Unable to initialize job search...")
-    general_check(lambda: find_job_data(soup, jobs_list, 'Yf9oye', 3), "Unable to initialize job search...")
-    general_check(lambda: find_job_data(soup, jobs_list, 'nNzjpf-cS4Vcb-PvZLI-Ueh9jd-LgbsSe-Jyewjb-tlSJBe', 4), "Unable to initialize job search...")
+    general_check(find_job_data(soup, jobs_list, 'tNxQIb PUpOsf', 0, 'div'), "Unable to initialize job search...")
+    general_check(find_job_data(soup, jobs_list, 'wHYlTd MKCbgd a3jPc', 1, 'div'), "Unable to initialize job search...")
+    general_check(find_job_data(soup, jobs_list, 'wHYlTd FqK3wc MKCbgd', 2, 'div'), "Unable to initialize job search...")
+    general_check(find_job_data(soup, jobs_list, 'gmxZue', 3, 'span'), "Unable to initialize job search...")
     print(jobs_list)
 
 # Make a function that validates strings
@@ -53,15 +52,11 @@ def input_valid_str(input_check):
 
 # Make a function that checks if a statement executes properly, throws specified error statement otherwise
 def general_check(statement, err_statement):
-    bool_check = True
     try:
-        check = statement()
+        statement
+        return statement
     except:
         print(err_statement)
-        bool_check = False
-
-    if bool_check:
-        return check
 
 
 def get_user_input():
@@ -99,27 +94,37 @@ def create_user_search_parameters(user_keywords, user_location, base_url_google,
 
 
 def get_html_code(search_url):
-    driver = general_check(lambda: Driver(browser="Chrome", headless=False), "Unable to load driver...")
-    general_check(lambda: driver.get(search_url), "Unable to load webpage...")
+    driver = general_check(Driver(browser="Chrome", headless=False), "Unable to load driver...")
+    general_check(driver.get(search_url), "Unable to load webpage...")
     bottom_height = driver.execute_script("return document.body.scrollHeight")
     while True:
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(.5)
         new_height = driver.execute_script("return document.body.scrollHeight")
         if new_height == bottom_height:
-            soup = general_check(lambda: BeautifulSoup(driver.page_source, 'html.parser'), "Unable to parse webpage...")
+            soup = general_check(BeautifulSoup(driver.page_source, 'html.parser'), "Unable to parse webpage...")
             return soup
         bottom_height = new_height
 
 def jobs_list_create_helper(soup, class_name):
     job_cards = soup.find_all('div', class_=f'{class_name}')
-    rows, cols = (len(job_cards), 5)
+    rows, cols = (len(job_cards), 4)
     jobs_list = [[0 for i in range(cols)] for j in range(rows)]
     return jobs_list
 
-def find_job_data(soup, jobs_list, class_name, index):
-    job_cards = soup.find_all('div', class_=f'{class_name}')
+def find_job_data(soup, jobs_list, class_name, index, header):
+    job_cards = soup.find_all(f'{header}', class_=f'{class_name}')
     counter = 0
+    if class_name == 'gmxZue':
+        for every in job_cards:
+            results = every.text.replace("ShareFacebookWhatsAppXEmailClick to copy linkShare linkLink copied", "")
+            temp = results.split('via')
+            last_two = temp[1].split("           ")
+            stripped = last_two[1].split('ago', 1)[0]
+            if 'days' in last_two[1]:
+                jobs_list[counter][index] = stripped + 'ago'
+            counter += 1
+        return jobs_list
     for equipment_type in job_cards:
         jobs_list[counter][index] = equipment_type.text
         counter += 1
