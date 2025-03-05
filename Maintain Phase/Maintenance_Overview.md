@@ -7,4 +7,7 @@
   - Keeping up to date by adding new job search websites and deleting old obsolete ones.
 
 ## Adding Basic Security Updates
-  - Every update cycle add more security features and restrict attacks
+  - Every update cycle add more security features and restrict attacks.
+
+## Unit Testing
+ - Add more unit tests to test any additional functionality. 
