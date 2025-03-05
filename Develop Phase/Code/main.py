@@ -20,43 +20,46 @@ def main():
     data_frame = []
 
     # Grab user search parameters
-    user_keywords, user_location = general_check(get_user_input(), "Unable to grab search parameters...")
+    user_keywords, user_location = general_check(lambda: get_user_input(), "Unable to grab search parameters...")
 
     # Google
     base_url_google = "https://www.google.com/search"
-    search_url_google = general_check(create_user_search_parameters(user_keywords, user_location, base_url_google, query), "Unable to generate search...")
-    soup = general_check(get_html_code(search_url_google), "Unable to load soup...")
+    search_url_google = general_check(lambda: create_user_search_parameters(user_keywords, user_location, base_url_google, query), "Unable to generate search...")
+    soup = general_check(lambda: get_html_code(search_url_google), "Unable to load soup...")
 
-    jobs_list = jobs_list_create_helper(soup, 'tNxQIb PUpOsf')
-    general_check(find_job_data(soup, jobs_list, 'tNxQIb PUpOsf', 0, 'div'), "Unable to initialize job search...")
-    general_check(find_job_data(soup, jobs_list, 'wHYlTd MKCbgd a3jPc', 1, 'div'), "Unable to initialize job search...")
-    general_check(find_job_data(soup, jobs_list, 'wHYlTd FqK3wc MKCbgd', 2, 'div'), "Unable to initialize job search...")
-    general_check(find_job_data(soup, jobs_list, 'gmxZue', 3, 'span'), "Unable to initialize job search...")
+    jobs_list = general_check(lambda: jobs_list_create_helper(soup, 'tNxQIb PUpOsf'), "Unable to generate jobs list...")
+    general_check(lambda: find_job_data(soup, jobs_list, 'tNxQIb PUpOsf', 0, 'div'), "Unable to initialize job search...")
+    general_check(lambda: find_job_data(soup, jobs_list, 'wHYlTd MKCbgd a3jPc', 1, 'div'), "Unable to initialize job search...")
+    general_check(lambda: find_job_data(soup, jobs_list, 'wHYlTd FqK3wc MKCbgd', 2, 'div'), "Unable to initialize job search...")
+    general_check(lambda: find_job_data(soup, jobs_list, 'gmxZue', 3, 'span'), "Unable to initialize job search...")
     print(jobs_list)
+
 
 # Make a function that validates strings
 def input_valid_str(input_check):
     check = False
-    char_check = ''
     for char in input_check:
-        try:
-            char_check = int(char)
-            check = True
-            break
-        except:
+        if char.isalpha() or char == '+':
             pass
+        else:
+            check = True
     if check:
         return False
     else:
         return True
 
+
 # Make a function that checks if a statement executes properly, throws specified error statement otherwise
 def general_check(statement, err_statement):
+    bool_check = True
     try:
-        statement
-        return statement
+        check = statement()
     except:
         print(err_statement)
+        bool_check = False
+
+    if bool_check:
+        return check
 
 
 def get_user_input():
@@ -94,26 +97,26 @@ def create_user_search_parameters(user_keywords, user_location, base_url_google,
 
 
 def get_html_code(search_url):
-    driver = general_check(Driver(browser="Chrome", headless=False), "Unable to load driver...")
-    general_check(driver.get(search_url), "Unable to load webpage...")
-    bottom_height = driver.execute_script("return document.body.scrollHeight")
+    driver = general_check(lambda: Driver(browser="Chrome", headless=False), "Unable to load driver...")
+    general_check(lambda: driver.get(search_url), "Unable to load webpage...")
+    bottom_height = general_check(lambda: driver.execute_script("return document.body.scrollHeight"), "Unable to execute script...")
     while True:
-        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        general_check(lambda: driver.execute_script("window.scrollTo(0, document.body.scrollHeight);"), "Unable to execute script...")
         time.sleep(.5)
-        new_height = driver.execute_script("return document.body.scrollHeight")
+        new_height = general_check(lambda: driver.execute_script("return document.body.scrollHeight"), "Unable to execute script...")
         if new_height == bottom_height:
-            soup = general_check(BeautifulSoup(driver.page_source, 'html.parser'), "Unable to parse webpage...")
+            soup = general_check(lambda: BeautifulSoup(driver.page_source, 'html.parser'), "Unable to parse webpage...")
             return soup
         bottom_height = new_height
 
 def jobs_list_create_helper(soup, class_name):
-    job_cards = soup.find_all('div', class_=f'{class_name}')
+    job_cards = general_check(lambda: soup.find_all('div', class_=f'{class_name}'), "Unable to find class name...")
     rows, cols = (len(job_cards), 4)
     jobs_list = [[0 for i in range(cols)] for j in range(rows)]
     return jobs_list
 
 def find_job_data(soup, jobs_list, class_name, index, header):
-    job_cards = soup.find_all(f'{header}', class_=f'{class_name}')
+    job_cards = general_check(lambda: soup.find_all(f'{header}', class_=f'{class_name}'), "Unable to find class name...")
     counter = 0
     if class_name == 'gmxZue':
         for every in job_cards:
