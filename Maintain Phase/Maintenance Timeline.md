@@ -8,4 +8,4 @@ Maintenance will be considered based on the criteria in the maintenance overview
 Jobsearch's end of support will occur Wednesday, March 5th, 2025, at 11:59pm.
 
 ## End of Life
-Jobsearch's end of life will occur Friday, March 7th, 2025, at 11:00am.
+Jobsearch's end of life will occur Friday, March 7th, 2025, at 10:59am.
