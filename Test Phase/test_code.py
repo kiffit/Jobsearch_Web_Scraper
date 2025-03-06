@@ -72,6 +72,8 @@ def check_general_valid(func_range=10):
     functions = []
     good = 0
     bad = 0
+    good_check = 0
+    bad_check = 0
 
     for x in range(func_range):
         num = randint(0, 1)
@@ -88,10 +90,12 @@ def check_general_valid(func_range=10):
         check = general_check(lambda: func(), 'Error')
         if not check:
             print(func, check)
+            bad_check += 1
         else:
             print(func, check)
+            good_check += 1
 
-    print('Good: ' + str(good) + '\nBad: ' + str(bad))
+    print('Good: ' + str(good) + '\t\tGood Checks: ' + str(good_check) + '\nBad: ' + str(bad) + '\t\tBad Checks: ' + str(bad_check))
 
 
 
@@ -100,4 +104,3 @@ if __name__ == '__main__':
     check_input_valid('Data+Scientist')
     print('\n\n----------------------------------------------------------\n\n')
     check_general_valid(5)
-
