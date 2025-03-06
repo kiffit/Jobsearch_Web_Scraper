@@ -10,6 +10,3 @@ This is to ensure that the input_valid_str() function works correctly, not allow
 
 ### General Check:
 This function is designed as a way to check to make sure the external module functions, as well as some other functions operate properly, and if they don't, it allows the program to nto crash, and instead throw an error console to the window.
-
-### CSV Files
-Most security issues with the CSV file would be code based, with allowing user input to be directly added, with no sanitatization and/or directly in the lines with the file open. These issues can be prevented pretty easily with proper coding practices. However, we can test the failsafes on the opening and closing of the file to ensure that the data does not accidentily get corrupted from them.
