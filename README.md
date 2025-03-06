@@ -53,6 +53,7 @@
 
 ## Maintain
 - Maintenance Overview: [Maintenance Overview](https://github.com/kiffit/Jobsearch_Web_Scraper/blob/main/Maintain%20Phase/Maintenance_Overview.md)
+- Maintenance Timeline: [Maintenance Timeline](https://github.com/kiffit/Jobsearch_Web_Scraper/edit/main/Maintain%20Phase/Maintenance%20Timeline.md)
 
 ## Team Details and Problem Statement
 - Members Page: [Members Page](https://github.com/kiffit/waterfall-project/blob/main/Team%20Details%20and%20Problem%20Statement/Members%20Page.md)
