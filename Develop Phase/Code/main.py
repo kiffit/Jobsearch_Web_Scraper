@@ -42,9 +42,9 @@ def main():
 # Final CSV helper that concatenates all three csvs together and prints a pretty terminal output.
 def final_csv_helper():
     # Reads all the csvs respectively.
-    read_google = pd.read_csv('google_jobs_listings.csv', index_col="Job Title", na_values=0)
-    read_indeed = pd.read_csv('indeed_job_listings.csv', index_col="Job Title", na_values=0)
-    read_career_builder = pd.read_csv('career_builder_job_listings.csv', index_col="Job Title", na_values=0)
+    read_google = general_check(lambda: pd.read_csv('google_jobs_listings.csv', index_col="Job Title", na_values=0), "Could not open Google Job Listings...")
+    read_indeed = general_check(lambda: pd.read_csv('indeed_job_listings.csv', index_col="Job Title", na_values=0), "Could not open Indeed Job Listings...")
+    read_career_builder = general_check(lambda: pd.read_csv('career_builder_job_listings.csv', index_col="Job Title", na_values=0), "Could not open Career Builder Job Listings...")
 
     # Combines all the csvs and removes the duplicates if applicable.
     final_csv = pd.concat([read_career_builder, read_indeed, read_google]).drop_duplicates(keep='first')
@@ -134,7 +134,7 @@ def do_indeed_helper(user_keywords, user_location, query, data_frame):
 
     # Exports it into a csv file with its respective csv file name.
     csv_file_path = 'indeed_job_listings.csv'
-    convert_to_csv(jobs_list, csv_file_path, data_frame)
+    general_check(lambda: convert_to_csv(jobs_list, csv_file_path, data_frame), 'Could not convert to CSV...')
 
 
 # Google helper that grabs all the functions together and makes the actual csv file for Google website.
@@ -160,7 +160,7 @@ def do_google_helper(user_keywords, user_location, query, data_frame):
 
     # Exports it into a csv file with its respective csv file name.
     csv_file_path = 'google_jobs_listings.csv'
-    convert_to_csv(jobs_list, csv_file_path, data_frame)
+    general_check(lambda: convert_to_csv(jobs_list, csv_file_path, data_frame), 'Could not convert to CSV...')
 
 
 # Function that grabs user input and returns both the user_keyword and user_location.
@@ -391,10 +391,10 @@ def find_job_data_career_builder(soup, jobs_list, class_name, index, header):
 # Converts all the data given and creates a CSV for each of the websites given.
 def convert_to_csv(jobs_list, csv_file_path, data_frame):
     # Creates a pandas dataframe with the columns given.
-    data_frame = pd.DataFrame(jobs_list, columns=['Job Title', 'Company', 'Location & via.', 'Date Posted'])
+    data_frame = general_check(lambda: pd.DataFrame(jobs_list, columns=['Job Title', 'Company', 'Location & via.', 'Date Posted']), 'Could not convert to DataFrame...')
 
     # Converts it into a csv
-    data_frame.to_csv(f'{csv_file_path}', index=False)
+    general_check(lambda: data_frame.to_csv(f'{csv_file_path}', index=False), 'Could not convert to CSV...')
 
 
 if __name__ == '__main__':
