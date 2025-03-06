@@ -43,6 +43,7 @@
 - 02/28/2025 [02/28/2025](https://github.com/kiffit/Jobsearch_Web_Scraper/blob/main/Develop%20Phase/Code/Progress%20Tracking/Job%20Scraper%2002.28.2025.pdf)
 - 03/02/2025 [03/02/2025](https://github.com/kiffit/Jobsearch_Web_Scraper/blob/main/Develop%20Phase/Code/Progress%20Tracking/Job%20Scraper%2003.02.2025.pdf)
 - 03/04/2025 [03/04/2025](https://github.com/kiffit/Jobsearch_Web_Scraper/blob/main/Develop%20Phase/Code/Progress%20Tracking/Job%20Scraper%2003.04.2025.pdf)
+- 03/05/2025 [03/05/2025](https://github.com/kiffit/Jobsearch_Web_Scraper/blob/main/Develop%20Phase/Code/Progress%20Tracking/Job%20Scraper%2003.05.2025.pdf)
 
 ## Test
 - Security Testing Overview: [Security Testing Overview](https://github.com/kiffit/Jobsearch_Web_Scraper/blob/main/Test%20Phase/Security%20Testing%20Overview.md)
