@@ -1,3 +1,4 @@
+import re
 import time
 from bs4 import BeautifulSoup
 from selenium.common import NoSuchElementException
@@ -28,22 +29,23 @@ def main():
     user_keywords, user_location = general_check(lambda: get_user_input(), "Unable to grab search parameters...")
 
     # Google
-    # do_google_helper(user_keywords, user_location, query, data_frame)
+    do_google_helper(user_keywords, user_location, query, data_frame)
 
     # Indeed
-    # do_indeed_helper(user_keywords, user_location, query, data_frame)
+    do_indeed_helper(user_keywords, user_location, query, data_frame)
 
     # Ziprecruiter
     do_career_builder_helper(user_keywords, user_location, query, data_frame)
 
     # Final CSV
-    '''read_google = pd.read_csv('google_jobs_listings.csv', index_col="Job Title", na_values=0)
+    read_google = pd.read_csv('google_jobs_listings.csv', index_col="Job Title", na_values=0)
     read_indeed = pd.read_csv('indeed_job_listings.csv', index_col="Job Title", na_values=0)
-    final_csv = pd.concat([read_google, read_indeed])
-    final_csv.drop_duplicates(inplace=True)
-    final_csv.to_csv('final_csv', index=False)
+    read_career_builder = pd.read_csv('career_builder_job_listings.csv', index_col="Job Title", na_values=0)
+    final_csv = pd.concat([read_career_builder, read_indeed, read_google]).drop_duplicates(keep='first')
+    final_csv_dropped_duplicates = final_csv[~final_csv.index.duplicated(keep='first')]
+    final_csv_dropped_duplicates.to_csv('final_csv', index=False)
 
-    print(final_csv.to_string())'''
+    print(final_csv_dropped_duplicates.to_string())
 
 
 def do_career_builder_helper(user_keywords, user_location, query, data_frame):
@@ -55,11 +57,18 @@ def do_career_builder_helper(user_keywords, user_location, query, data_frame):
     soup = general_check(lambda: get_html_code_indeed(search_url_career_builder), "Unable to load soup...")
     jobs_list = general_check(lambda: jobs_list_create_helper(soup, 'data-results-title dark-blue-text b'),
                               "Unable to generate jobs list...")
-    general_check(
-        lambda: find_job_data_career_builder(soup, jobs_list, 'data-results-title dark-blue-text b', 0, 'div'),
+    general_check(lambda: find_job_data_career_builder(soup, jobs_list, 'data-results-title dark-blue-text b', 0, 'div'),
         "Unable to initialize job search...")
     general_check(lambda: find_job_data_career_builder(soup, jobs_list, 'data-details', 1, 'div'),
-                  "Unable to initialize job search...")
+        "Unable to initialize job search...")
+    general_check(lambda: find_job_data_career_builder(soup, jobs_list, 'data-details', 2, 'div'),
+        "Unable to initialize job search...")
+    general_check(lambda: find_job_data_career_builder(soup, jobs_list, 'data-results-publish-time', 3, 'div'),
+        "Unable to initialize job search...")
+
+    csv_file_path = 'career_builder_job_listings.csv'
+    convert_to_csv(jobs_list, csv_file_path, data_frame)
+
 
 
 def do_indeed_helper(user_keywords, user_location, query, data_frame):
@@ -78,6 +87,7 @@ def do_indeed_helper(user_keywords, user_location, query, data_frame):
                   "Unable to initialize job search...")
     general_check(lambda: find_job_data_indeed(soup, jobs_list, 'css-1yxm164 eu4oa1w0', 3, 'span'),
                   "Unable to initialize job search...")
+
 
     csv_file_path = 'indeed_job_listings.csv'
     convert_to_csv(jobs_list, csv_file_path, data_frame)
@@ -174,7 +184,7 @@ def create_user_search_parameters_indeed(user_keywords, user_location, base_url_
 
 
 def create_user_search_parameters_career_builder(user_keywords, user_location, base_url_zip_recruiter, query):
-    query = f"{user_keywords}+&location=+{user_location}+%2C"
+    query = f"{user_keywords}+&location=+{user_location}+%2C+&pay=&emp=&cb_veterans=false&cb_workhome=all&sort=date_desc"
     search_url = base_url_zip_recruiter + query
 
     print("\nSearch URL Zip Recruiter:", search_url)
@@ -260,12 +270,25 @@ def find_job_data_career_builder(soup, jobs_list, class_name, index, header):
     job_cards = general_check(lambda: soup.find_all(f'{header}', class_=f'{class_name}'),
                               "Unable to find class name...")
     counter = 0
-    list = ['Full-Time', 'Intern', 'Part-Time']
     for equipment_type in job_cards:
-        found_words = [word for word in list if word in equipment_type.text]
-        print(equipment_type.text)
-        print(found_words)
-        counter += 1
+        if class_name == 'data-results-title dark-blue-text b':
+            jobs_list[counter][index] = equipment_type.text
+            counter += 1
+        if class_name == 'data-results-publish-time':
+            jobs_list[counter][index] = equipment_type.text
+            counter += 1
+        if 'Full-Time' in equipment_type.text:
+            data_list = re.split('\n', equipment_type.text)
+            jobs_list[counter][index] = data_list[index]
+            counter += 1
+        if 'Part-Time' in equipment_type.text:
+            data_list = re.split('\n', equipment_type.text)
+            jobs_list[counter][index] = data_list[index]
+            counter += 1
+        if 'Intern' in equipment_type.text:
+            data_list = re.split('\n', equipment_type.text)
+            jobs_list[counter][index] = data_list[index]
+            counter += 1
     return jobs_list
 
 
