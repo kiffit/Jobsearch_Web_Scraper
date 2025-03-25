@@ -1,3 +1,6 @@
+### **[ [---------------------------------------------- Click to go Back to Home -----------------------------------------------] ](https://github.com/Purolis/Agile-Group-Project)**
+
+
 ## Executive Summary
 ### Describe the Problem
 The steps of finding job listings from various websites and segregating them are hard and time-consuming. Many job seekers are unable to find job details on various sites.
@@ -12,9 +15,9 @@ Our problem at hand was finding the job listings from various web sites and scra
 Sorting through the data with a program will fix the problems of duplicate job listings, missed deadlines, and just make it faster to find the data faster. In general, this will solve our problem of making job listings easier to sort through and reducing the time it takes to search for jobs.
 
 ### Expected Deliverables
-- Secure documentation on the program itself.
-- Design that comes with the program that would help the user better understand the system.
-- Documentation that comes with the program that would help the user better understand the system.
-- Software artifacts that sort the data out and allows for an easier time when looking at job listings by the end of the waterfall project timeline. 
+- Documentation that completely outlines the parameters and everything that we do in the project itself.
+- At least six sprints completely done.
+- Documentation that might hekp the user understand the project.
+- A program that functions like Blackjack.
+- Funky additions to the Blackjack game that make it more innovating.
 
-### **[Click here to go back to Home](https://github.com/kiffit/waterfall-project)**
